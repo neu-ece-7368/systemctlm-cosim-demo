@@ -35,12 +35,12 @@ HAVE_VERILOG=y
 HAVE_VERILOG_VERILATOR?=n
 HAVE_VERILOG_VCS=y
 else
-SYSTEMC ?= /usr/local/systemc-2.3.2/
-SYSTEMC_INCLUDE ?=$(SYSTEMC)/include/
-SYSTEMC_LIBDIR ?= $(SYSTEMC)/lib-linux64
+SYSTEMC ?= /usr
+SYSTEMC_INCLUDE ?=$(SYSTEMC)/include/sysc
+SYSTEMC_LIBDIR ?= $(SYSTEMC)/lib/x86_64-linux-gnu
 # In case your TLM-2.0 installation is not bundled with
 # with the SystemC one.
-# TLM2 ?= /opt/systemc/TLM-2009-07-15
+TLM2 ?= /usr/include/tlm_core
 endif
 
 SCML ?= /usr/local/scml-2.3/
@@ -58,7 +58,7 @@ ifneq "$(SYSTEMC_INCLUDE)" ""
 CPPFLAGS += -I $(SYSTEMC_INCLUDE)
 endif
 ifneq "$(TLM2)" ""
-CPPFLAGS += -I $(TLM2)/include/tlm
+CPPFLAGS += -I $(TLM2)/tlm_2
 endif
 
 CPPFLAGS += -I .
