@@ -37,7 +37,7 @@ HAVE_VERILOG_VCS=y
 else
 SYSTEMC ?= /usr
 SYSTEMC_INCLUDE ?=$(SYSTEMC)/include
-SYSTEMC_LIBDIR ?= $(SYSTEMC)/lib/x86_64-linux-gnu
+SYSTEMC_LIBDIR ?= $(SYSTEMC)/$(SYSTEMC_LIBS)
 # In case your TLM-2.0 installation is not bundled with
 # with the SystemC one.
 TLM2 ?= /usr/include/tlm_core
